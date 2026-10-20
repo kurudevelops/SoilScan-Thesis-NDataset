@@ -1,0 +1,404 @@
+pattern,file,stem,flag
+002,IMG_0374.jpg,IMG_0374,soil mask cut off at ROI edge
+022,IMG_0339.jpg,IMG_0339,implausible soil area
+022,IMG_20260820_161518_807.jpg,IMG_20260820_161518_807,implausible soil area; soil mask cut off at ROI edge
+100,IMG_0695.jpg,IMG_0695,soil mask cut off at ROI edge
+100,IMG_0699.jpg,IMG_0699,soil mask cut off at ROI edge
+100,IMG_0709.jpg,IMG_0709,soil mask cut off at ROI edge
+100,IMG_0715.jpg,IMG_0715,soil mask cut off at ROI edge
+100,IMG_0717.jpg,IMG_0717,soil mask cut off at ROI edge
+100,IMG_0733.jpg,IMG_0733,implausible soil area; soil mask cut off at ROI edge
+100,IMG_0735.jpg,IMG_0735,implausible soil area; soil mask cut off at ROI edge
+100,IMG_0741.jpg,IMG_0741,soil mask cut off at ROI edge
+100,IMG_0745.jpg,IMG_0745,soil mask cut off at ROI edge
+100,IMG_0747.jpg,IMG_0747,soil mask cut off at ROI edge
+100,IMG_0760.jpg,IMG_0760,soil mask cut off at ROI edge
+100,IMG_0764.jpg,IMG_0764,soil mask cut off at ROI edge
+100,IMG_0766.jpg,IMG_0766,implausible soil area; soil mask cut off at ROI edge
+100,IMG_0776.jpg,IMG_0776,soil mask cut off at ROI edge
+100,IMG_0782.jpg,IMG_0782,soil mask cut off at ROI edge
+100,IMG_0788.jpg,IMG_0788,implausible soil area; soil mask cut off at ROI edge
+101,1784311998770.jpg,1784311998770,soil mask cut off at ROI edge
+101,1784311998786.jpg,1784311998786,implausible soil area; soil mask cut off at ROI edge
+101,1784311998793.jpg,1784311998793,soil mask cut off at ROI edge
+101,1784311998801.jpg,1784311998801,implausible soil area; soil mask cut off at ROI edge
+101,1784311998817.jpg,1784311998817,implausible soil area; soil mask cut off at ROI edge
+101,1784311998832.jpg,1784311998832,implausible soil area; soil mask cut off at ROI edge
+101,1784311998848.jpg,1784311998848,soil mask cut off at ROI edge
+101,1784311998864.jpg,1784311998864,soil mask cut off at ROI edge
+101,1784311998880.jpg,1784311998880,implausible soil area; soil mask cut off at ROI edge
+101,1784311998888.jpg,1784311998888,soil mask cut off at ROI edge
+101,1784311998896.jpg,1784311998896,implausible soil area; soil mask cut off at ROI edge
+101,1784311998912.jpg,1784311998912,implausible soil area; soil mask cut off at ROI edge
+101,1784311998929.jpg,1784311998929,implausible soil area; soil mask cut off at ROI edge
+101,1784311998937.jpg,1784311998937,implausible soil area; soil mask cut off at ROI edge
+101,1784311998945.jpg,1784311998945,implausible soil area; soil mask cut off at ROI edge
+101,1784311998961.jpg,1784311998961,implausible soil area
+101,1784311998970.jpg,1784311998970,soil mask cut off at ROI edge
+101,1784311998977.jpg,1784311998977,implausible soil area; soil mask cut off at ROI edge
+101,1784311998985.jpg,1784311998985,soil mask cut off at ROI edge
+101,1784311998993.jpg,1784311998993,implausible soil area; soil mask cut off at ROI edge
+101,1784311999009.jpg,1784311999009,implausible soil area; soil mask cut off at ROI edge
+101,1784311999024.jpg,1784311999024,implausible soil area; soil mask cut off at ROI edge
+101,1784311999040.jpg,1784311999040,implausible soil area; soil mask cut off at ROI edge
+101,1784311999056.jpg,1784311999056,soil mask cut off at ROI edge
+101,1784311999072.jpg,1784311999072,implausible soil area; soil mask cut off at ROI edge
+101,1784311999080.jpg,1784311999080,soil mask cut off at ROI edge
+101,1784311999088.jpg,1784311999088,implausible soil area; soil mask cut off at ROI edge
+101,1784311999104.jpg,1784311999104,implausible soil area; soil mask cut off at ROI edge
+101,1784311999112.jpg,1784311999112,soil mask cut off at ROI edge
+101,1784311999120.jpg,1784311999120,implausible soil area; soil mask cut off at ROI edge
+101,1784311999128.jpg,1784311999128,implausible soil area; soil mask cut off at ROI edge
+101,1784311999136.jpg,1784311999136,implausible soil area; soil mask cut off at ROI edge
+101,1784311999151.jpg,1784311999151,implausible soil area; soil mask cut off at ROI edge
+101,1784311999158.jpg,1784311999158,soil mask cut off at ROI edge
+101,1784311999166.jpg,1784311999166,implausible soil area; soil mask cut off at ROI edge
+101,1784311999174.jpg,1784311999174,soil mask cut off at ROI edge
+101,1784311999182.jpg,1784311999182,implausible soil area; soil mask cut off at ROI edge
+101,1784311999197.jpg,1784311999197,soil mask cut off at ROI edge
+101,1784311999206.jpg,1784311999206,soil mask cut off at ROI edge
+101,1784311999214.jpg,1784311999214,soil mask cut off at ROI edge
+101,1784311999222.jpg,1784311999222,implausible soil area; soil mask cut off at ROI edge
+101,1784311999230.jpg,1784311999230,implausible soil area; soil mask cut off at ROI edge
+101,1784311999245.jpg,1784311999245,implausible soil area; soil mask cut off at ROI edge
+101,1784311999253.jpg,1784311999253,soil mask cut off at ROI edge
+101,1784311999260.jpg,1784311999260,implausible soil area; soil mask cut off at ROI edge
+101,1784311999270.jpg,1784311999270,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,1784311999278.jpg,1784311999278,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155341.jpg,IMG_20260716_155341,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155348.jpg,IMG_20260716_155348,soil mask cut off at ROI edge
+101,IMG_20260716_155351.jpg,IMG_20260716_155351,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155353.jpg,IMG_20260716_155353,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155410.jpg,IMG_20260716_155410,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155628.jpg,IMG_20260716_155628,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155632.jpg,IMG_20260716_155632,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155635.jpg,IMG_20260716_155635,soil mask cut off at ROI edge
+101,IMG_20260716_155638.jpg,IMG_20260716_155638,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155641.jpg,IMG_20260716_155641,soil mask cut off at ROI edge
+101,IMG_20260716_155804.jpg,IMG_20260716_155804,soil mask cut off at ROI edge
+101,IMG_20260716_155807.jpg,IMG_20260716_155807,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155814.jpg,IMG_20260716_155814,soil mask cut off at ROI edge
+101,IMG_20260716_155816.jpg,IMG_20260716_155816,soil mask cut off at ROI edge
+101,IMG_20260716_155826.jpg,IMG_20260716_155826,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155946.jpg,IMG_20260716_155946,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155952.jpg,IMG_20260716_155952,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155955.jpg,IMG_20260716_155955,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_155959.jpg,IMG_20260716_155959,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160003.jpg,IMG_20260716_160003,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160141.jpg,IMG_20260716_160141,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160144.jpg,IMG_20260716_160144,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160148.jpg,IMG_20260716_160148,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160150.jpg,IMG_20260716_160150,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160216.jpg,IMG_20260716_160216,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160316.jpg,IMG_20260716_160316,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160320.jpg,IMG_20260716_160320,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160323.jpg,IMG_20260716_160323,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160326.jpg,IMG_20260716_160326,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160331.jpg,IMG_20260716_160331,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160441.jpg,IMG_20260716_160441,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160444.jpg,IMG_20260716_160444,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160447.jpg,IMG_20260716_160447,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160449.jpg,IMG_20260716_160449,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160451.jpg,IMG_20260716_160451,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160611.jpg,IMG_20260716_160611,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160613.jpg,IMG_20260716_160613,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160619.jpg,IMG_20260716_160619,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160624.jpg,IMG_20260716_160624,little white reference found; implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160638.jpg,IMG_20260716_160638,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160749.jpg,IMG_20260716_160749,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160752.jpg,IMG_20260716_160752,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160756.jpg,IMG_20260716_160756,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160759.jpg,IMG_20260716_160759,implausible soil area; soil mask cut off at ROI edge
+101,IMG_20260716_160802.jpg,IMG_20260716_160802,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151053.jpg,IMG_20260716_151053,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151057.jpg,IMG_20260716_151057,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151101.jpg,IMG_20260716_151101,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151105.jpg,IMG_20260716_151105,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151110.jpg,IMG_20260716_151110,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151356.jpg,IMG_20260716_151356,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151359.jpg,IMG_20260716_151359,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151402.jpg,IMG_20260716_151402,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151405.jpg,IMG_20260716_151405,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151409.jpg,IMG_20260716_151409,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151529.jpg,IMG_20260716_151529,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151540.jpg,IMG_20260716_151540,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151542.jpg,IMG_20260716_151542,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151545.jpg,IMG_20260716_151545,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151551.jpg,IMG_20260716_151551,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151739.jpg,IMG_20260716_151739,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151742.jpg,IMG_20260716_151742,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151745.jpg,IMG_20260716_151745,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151747.jpg,IMG_20260716_151747,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_151752.jpg,IMG_20260716_151752,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152034.jpg,IMG_20260716_152034,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152037.jpg,IMG_20260716_152037,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152042.jpg,IMG_20260716_152042,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152045.jpg,IMG_20260716_152045,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152103.jpg,IMG_20260716_152103,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152334.jpg,IMG_20260716_152334,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152338.jpg,IMG_20260716_152338,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152342.jpg,IMG_20260716_152342,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152346.jpg,IMG_20260716_152346,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152351.jpg,IMG_20260716_152351,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152528.jpg,IMG_20260716_152528,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152544.jpg,IMG_20260716_152544,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152546.jpg,IMG_20260716_152546,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152549.jpg,IMG_20260716_152549,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152605.jpg,IMG_20260716_152605,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152746.jpg,IMG_20260716_152746,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152750.jpg,IMG_20260716_152750,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152754.jpg,IMG_20260716_152754,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152759.jpg,IMG_20260716_152759,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_152803.jpg,IMG_20260716_152803,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153000.jpg,IMG_20260716_153000,soil mask cut off at ROI edge
+102,IMG_20260716_153003.jpg,IMG_20260716_153003,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153009.jpg,IMG_20260716_153009,soil mask cut off at ROI edge
+102,IMG_20260716_153012.jpg,IMG_20260716_153012,soil mask cut off at ROI edge
+102,IMG_20260716_153015.jpg,IMG_20260716_153015,soil mask cut off at ROI edge
+102,IMG_20260716_153311.jpg,IMG_20260716_153311,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153314.jpg,IMG_20260716_153314,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153317.jpg,IMG_20260716_153317,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153320.jpg,IMG_20260716_153320,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153331.jpg,IMG_20260716_153331,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153441.jpg,IMG_20260716_153441,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153443.jpg,IMG_20260716_153443,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153448.jpg,IMG_20260716_153448,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153450.jpg,IMG_20260716_153450,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153621.jpg,IMG_20260716_153621,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153625.jpg,IMG_20260716_153625,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153629.jpg,IMG_20260716_153629,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153632.jpg,IMG_20260716_153632,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153635.jpg,IMG_20260716_153635,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153816.jpg,IMG_20260716_153816,soil mask cut off at ROI edge
+102,IMG_20260716_153819.jpg,IMG_20260716_153819,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153821.jpg,IMG_20260716_153821,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_153825.jpg,IMG_20260716_153825,soil mask cut off at ROI edge
+102,IMG_20260716_153828.jpg,IMG_20260716_153828,soil mask cut off at ROI edge
+102,IMG_20260716_154011.jpg,IMG_20260716_154011,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154019.jpg,IMG_20260716_154019,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154022.jpg,IMG_20260716_154022,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154027.jpg,IMG_20260716_154027,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154325.jpg,IMG_20260716_154325,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154326.jpg,IMG_20260716_154326,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154329.jpg,IMG_20260716_154329,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154332.jpg,IMG_20260716_154332,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154335.jpg,IMG_20260716_154335,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154532.jpg,IMG_20260716_154532,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154534.jpg,IMG_20260716_154534,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154537.jpg,IMG_20260716_154537,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154541.jpg,IMG_20260716_154541,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154544.jpg,IMG_20260716_154544,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154702.jpg,IMG_20260716_154702,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154706.jpg,IMG_20260716_154706,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154709.jpg,IMG_20260716_154709,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154712.jpg,IMG_20260716_154712,little white reference found; implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154714.jpg,IMG_20260716_154714,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154845.jpg,IMG_20260716_154845,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154848.jpg,IMG_20260716_154848,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154851.jpg,IMG_20260716_154851,soil mask cut off at ROI edge
+102,IMG_20260716_154854.jpg,IMG_20260716_154854,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_154859.jpg,IMG_20260716_154859,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155036.jpg,IMG_20260716_155036,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155038.jpg,IMG_20260716_155038,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155040.jpg,IMG_20260716_155040,soil mask cut off at ROI edge
+102,IMG_20260716_155043.jpg,IMG_20260716_155043,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155045.jpg,IMG_20260716_155045,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155200_1.jpg,IMG_20260716_155200_1,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155218.jpg,IMG_20260716_155218,implausible soil area; soil mask cut off at ROI edge
+102,IMG_20260716_155221.jpg,IMG_20260716_155221,soil mask cut off at ROI edge
+102,IMG_20260716_155223.jpg,IMG_20260716_155223,soil mask cut off at ROI edge
+102,IMG_20260716_155226.jpg,IMG_20260716_155226,soil mask cut off at ROI edge
+110,IMG_0927.jpg,IMG_0927,soil mask cut off at ROI edge
+110,IMG_0962.jpg,IMG_0962,soil mask cut off at ROI edge
+111,IMG_0242.jpg,IMG_0242,implausible soil area
+111,IMG_0252.jpg,IMG_0252,soil mask cut off at ROI edge
+111,IMG_0255.jpg,IMG_0255,soil mask cut off at ROI edge
+111,IMG_0259.jpg,IMG_0259,soil mask cut off at ROI edge
+111,IMG_0288.jpg,IMG_0288,implausible soil area
+111,IMG_0294.jpg,IMG_0294,implausible soil area
+112,1784311958886.jpg,1784311958886,implausible soil area; soil mask cut off at ROI edge
+112,1784311958894.jpg,1784311958894,soil mask cut off at ROI edge
+112,1784311958902.jpg,1784311958902,implausible soil area; soil mask cut off at ROI edge
+112,1784311958910.jpg,1784311958910,implausible soil area; soil mask cut off at ROI edge
+112,1784311958918.jpg,1784311958918,implausible soil area; soil mask cut off at ROI edge
+112,1784311999296.jpg,1784311999296,implausible soil area
+112,1784311999311.jpg,1784311999311,implausible soil area; soil mask cut off at ROI edge
+112,1784311999327.jpg,1784311999327,implausible soil area; soil mask cut off at ROI edge
+112,1784311999342.jpg,1784311999342,implausible soil area; soil mask cut off at ROI edge
+112,1784311999357.jpg,1784311999357,implausible soil area; soil mask cut off at ROI edge
+112,1784311999373.jpg,1784311999373,implausible soil area; soil mask cut off at ROI edge
+112,1784311999390.jpg,1784311999390,implausible soil area; soil mask cut off at ROI edge
+112,1784311999405.jpg,1784311999405,implausible soil area; soil mask cut off at ROI edge
+112,1784311999421.jpg,1784311999421,implausible soil area; soil mask cut off at ROI edge
+112,1784311999436.jpg,1784311999436,implausible soil area; soil mask cut off at ROI edge
+112,1784311999451.jpg,1784311999451,implausible soil area; soil mask cut off at ROI edge
+112,1784311999466.jpg,1784311999466,implausible soil area; soil mask cut off at ROI edge
+112,1784311999481.jpg,1784311999481,implausible soil area
+112,1784311999496.jpg,1784311999496,implausible soil area; soil mask cut off at ROI edge
+112,1784311999504.jpg,1784311999504,implausible soil area; soil mask cut off at ROI edge
+112,1784311999511.jpg,1784311999511,implausible soil area; soil mask cut off at ROI edge
+112,1784311999526.jpg,1784311999526,implausible soil area; soil mask cut off at ROI edge
+112,1784311999534.jpg,1784311999534,soil mask cut off at ROI edge
+112,1784311999541.jpg,1784311999541,implausible soil area; soil mask cut off at ROI edge
+112,1784311999549.jpg,1784311999549,implausible soil area; soil mask cut off at ROI edge
+112,1784311999556.jpg,1784311999556,implausible soil area; soil mask cut off at ROI edge
+112,1784311999573.jpg,1784311999573,soil mask cut off at ROI edge
+112,1784311999589.jpg,1784311999589,implausible soil area
+112,1784311999597.jpg,1784311999597,implausible soil area; soil mask cut off at ROI edge
+112,1784311999605.jpg,1784311999605,implausible soil area; soil mask cut off at ROI edge
+112,1784311999621.jpg,1784311999621,implausible soil area; soil mask cut off at ROI edge
+112,1784311999629.jpg,1784311999629,soil mask cut off at ROI edge
+112,1784311999637.jpg,1784311999637,implausible soil area; soil mask cut off at ROI edge
+112,1784311999645.jpg,1784311999645,little white reference found; soil mask cut off at ROI edge
+112,1784311999653.jpg,1784311999653,implausible soil area; soil mask cut off at ROI edge
+112,1784311999668.jpg,1784311999668,implausible soil area
+112,1784311999684.jpg,1784311999684,implausible soil area; soil mask cut off at ROI edge
+112,1784311999692.jpg,1784311999692,implausible soil area; soil mask cut off at ROI edge
+112,1784311999700.jpg,1784311999700,implausible soil area; soil mask cut off at ROI edge
+112,1784311999715.jpg,1784311999715,implausible soil area; soil mask cut off at ROI edge
+112,1784311999722.jpg,1784311999722,soil mask cut off at ROI edge
+112,1784311999730.jpg,1784311999730,implausible soil area; soil mask cut off at ROI edge
+112,1784311999738.jpg,1784311999738,implausible soil area; soil mask cut off at ROI edge
+112,1784311999746.jpg,1784311999746,implausible soil area; soil mask cut off at ROI edge
+112,1784311999762.jpg,1784311999762,implausible soil area; soil mask cut off at ROI edge
+112,1784311999778.jpg,1784311999778,implausible soil area; soil mask cut off at ROI edge
+112,1784311999786.jpg,1784311999786,implausible soil area; soil mask cut off at ROI edge
+112,1784311999794.jpg,1784311999794,implausible soil area; soil mask cut off at ROI edge
+112,1784311999809.jpg,1784311999809,soil mask cut off at ROI edge
+112,1784311999825.jpg,1784311999825,soil mask cut off at ROI edge
+112,1784311999833.jpg,1784311999833,soil mask cut off at ROI edge
+112,1784311999840.jpg,1784311999840,soil mask cut off at ROI edge
+112,1784311999855.jpg,1784311999855,implausible soil area; soil mask cut off at ROI edge
+112,1784311999871.jpg,1784311999871,implausible soil area; soil mask cut off at ROI edge
+112,1784311999879.jpg,1784311999879,implausible soil area; soil mask cut off at ROI edge
+112,1784311999886.jpg,1784311999886,implausible soil area; soil mask cut off at ROI edge
+112,1784311999901.jpg,1784311999901,soil mask cut off at ROI edge
+112,1784311999916.jpg,1784311999916,soil mask cut off at ROI edge
+112,1784311999932.jpg,1784311999932,soil mask cut off at ROI edge
+112,1784311999964.jpg,1784311999964,soil mask cut off at ROI edge
+112,1784311999971.jpg,1784311999971,soil mask cut off at ROI edge
+112,1784311999979.jpg,1784311999979,soil mask cut off at ROI edge
+112,1784312000002.jpg,1784312000002,implausible soil area
+112,1784312000044.jpg,1784312000044,implausible soil area; soil mask cut off at ROI edge
+112,1784312000052.jpg,1784312000052,implausible soil area; soil mask cut off at ROI edge
+112,1784312000070.jpg,1784312000070,soil mask cut off at ROI edge
+112,1784312000078.jpg,1784312000078,implausible soil area
+112,1784312000095.jpg,1784312000095,implausible soil area; soil mask cut off at ROI edge
+112,1784312000110.jpg,1784312000110,implausible soil area; soil mask cut off at ROI edge
+112,1784312000126.jpg,1784312000126,implausible soil area
+120,20260916_110737.jpg,20260916_110737,implausible soil area; soil mask cut off at ROI edge
+120,20260916_112022.jpg,20260916_112022,soil mask cut off at ROI edge
+121,IMG_0206.jpg,IMG_0206,little white reference found; implausible soil area
+121,IMG_0313.jpg,IMG_0313,implausible soil area; soil mask cut off at ROI edge
+121,IMG_0314.jpg,IMG_0314,implausible soil area
+121,IMG_20260820_160119_080.jpg,IMG_20260820_160119_080,soil mask cut off at ROI edge
+122,1784311998285.jpg,1784311998285,soil mask cut off at ROI edge
+122,1784311998302.jpg,1784311998302,implausible soil area; soil mask cut off at ROI edge
+122,1784311998311.jpg,1784311998311,soil mask cut off at ROI edge
+122,1784311998319.jpg,1784311998319,implausible soil area; soil mask cut off at ROI edge
+122,1784311998335.jpg,1784311998335,implausible soil area; soil mask cut off at ROI edge
+122,1784311998343.jpg,1784311998343,soil mask cut off at ROI edge
+122,1784311998351.jpg,1784311998351,implausible soil area; soil mask cut off at ROI edge
+122,1784311998358.jpg,1784311998358,implausible soil area; soil mask cut off at ROI edge
+122,1784311998368.jpg,1784311998368,soil mask cut off at ROI edge
+122,1784311998386.jpg,1784311998386,soil mask cut off at ROI edge
+122,1784311998395.jpg,1784311998395,soil mask cut off at ROI edge
+122,1784311998403.jpg,1784311998403,implausible soil area; soil mask cut off at ROI edge
+122,1784311998421.jpg,1784311998421,implausible soil area; soil mask cut off at ROI edge
+122,1784311998438.jpg,1784311998438,soil mask cut off at ROI edge
+122,1784311998447.jpg,1784311998447,soil mask cut off at ROI edge
+122,1784311998455.jpg,1784311998455,implausible soil area; soil mask cut off at ROI edge
+122,1784311998471.jpg,1784311998471,implausible soil area; soil mask cut off at ROI edge
+122,1784311998487.jpg,1784311998487,implausible soil area; soil mask cut off at ROI edge
+122,1784311998502.jpg,1784311998502,implausible soil area; soil mask cut off at ROI edge
+122,1784311998510.jpg,1784311998510,implausible soil area; soil mask cut off at ROI edge
+122,1784311998517.jpg,1784311998517,implausible soil area; soil mask cut off at ROI edge
+122,1784311998532.jpg,1784311998532,implausible soil area; soil mask cut off at ROI edge
+122,1784311998547.jpg,1784311998547,implausible soil area; soil mask cut off at ROI edge
+122,1784311998563.jpg,1784311998563,implausible soil area; soil mask cut off at ROI edge
+122,1784311998595.jpg,1784311998595,soil mask cut off at ROI edge
+122,1784311998610.jpg,1784311998610,soil mask cut off at ROI edge
+122,1784311998626.jpg,1784311998626,implausible soil area; soil mask cut off at ROI edge
+122,1784311998642.jpg,1784311998642,implausible soil area; soil mask cut off at ROI edge
+122,1784311998649.jpg,1784311998649,soil mask cut off at ROI edge
+122,1784311998658.jpg,1784311998658,implausible soil area; soil mask cut off at ROI edge
+122,1784311998673.jpg,1784311998673,soil mask cut off at ROI edge
+122,1784311998681.jpg,1784311998681,soil mask cut off at ROI edge
+122,1784311998690.jpg,1784311998690,implausible soil area; soil mask cut off at ROI edge
+122,1784311998697.jpg,1784311998697,soil mask cut off at ROI edge
+122,1784311998705.jpg,1784311998705,implausible soil area; soil mask cut off at ROI edge
+122,1784311998721.jpg,1784311998721,soil mask cut off at ROI edge
+122,1784311998737.jpg,1784311998737,implausible soil area; soil mask cut off at ROI edge
+122,1784311998745.jpg,1784311998745,soil mask cut off at ROI edge
+122,1784311998754.jpg,1784311998754,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_161822.jpg,IMG_20260716_161822,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_161826.jpg,IMG_20260716_161826,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_161832.jpg,IMG_20260716_161832,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_161835.jpg,IMG_20260716_161835,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_161859.jpg,IMG_20260716_161859,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162015.jpg,IMG_20260716_162015,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162021.jpg,IMG_20260716_162021,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162025.jpg,IMG_20260716_162025,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162028.jpg,IMG_20260716_162028,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162032.jpg,IMG_20260716_162032,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162236.jpg,IMG_20260716_162236,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162240.jpg,IMG_20260716_162240,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162246.jpg,IMG_20260716_162246,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162250.jpg,IMG_20260716_162250,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162306.jpg,IMG_20260716_162306,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162415.jpg,IMG_20260716_162415,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162418.jpg,IMG_20260716_162418,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162433.jpg,IMG_20260716_162433,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162501.jpg,IMG_20260716_162501,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162509.jpg,IMG_20260716_162509,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162628.jpg,IMG_20260716_162628,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162639.jpg,IMG_20260716_162639,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162643.jpg,IMG_20260716_162643,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162649.jpg,IMG_20260716_162649,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162655.jpg,IMG_20260716_162655,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162807.jpg,IMG_20260716_162807,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162811.jpg,IMG_20260716_162811,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162815.jpg,IMG_20260716_162815,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162820.jpg,IMG_20260716_162820,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162825.jpg,IMG_20260716_162825,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162935.jpg,IMG_20260716_162935,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162939.jpg,IMG_20260716_162939,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162946.jpg,IMG_20260716_162946,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162950.jpg,IMG_20260716_162950,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_162955.jpg,IMG_20260716_162955,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163109.jpg,IMG_20260716_163109,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163113.jpg,IMG_20260716_163113,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163116.jpg,IMG_20260716_163116,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163120.jpg,IMG_20260716_163120,little white reference found; implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163124.jpg,IMG_20260716_163124,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163232.jpg,IMG_20260716_163232,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163236.jpg,IMG_20260716_163236,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163240.jpg,IMG_20260716_163240,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163243.jpg,IMG_20260716_163243,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163248.jpg,IMG_20260716_163248,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163332.jpg,IMG_20260716_163332,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163337.jpg,IMG_20260716_163337,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163341.jpg,IMG_20260716_163341,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163346.jpg,IMG_20260716_163346,implausible soil area; soil mask cut off at ROI edge
+122,IMG_20260716_163350.jpg,IMG_20260716_163350,implausible soil area; soil mask cut off at ROI edge
+201,20260916_104232.jpg,20260916_104232,soil mask cut off at ROI edge
+202,IMG_20260820_171945_504.jpg,IMG_20260820_171945_504,implausible soil area; soil mask cut off at ROI edge
+202,IMG_20260820_172043_571.jpg,IMG_20260820_172043_571,soil mask cut off at ROI edge
+202,IMG_20260820_172306_110.jpg,IMG_20260820_172306_110,implausible soil area; soil mask cut off at ROI edge
+202,IMG_20260820_172546_808.jpg,IMG_20260820_172546_808,soil mask cut off at ROI edge
+202,IMG_20260820_172944_810.jpg,IMG_20260820_172944_810,soil mask cut off at ROI edge
+202,IMG_20260820_173136_619.jpg,IMG_20260820_173136_619,soil mask cut off at ROI edge
+210,20260916_105840.jpg,20260916_105840,soil mask cut off at ROI edge
+212,IMG_20260820_170606_415.jpg,IMG_20260820_170606_415,implausible soil area; soil mask cut off at ROI edge
+212,IMG_20260820_171132_461.jpg,IMG_20260820_171132_461,implausible soil area; soil mask cut off at ROI edge
+212,IMG_20260820_171141_049.jpg,IMG_20260820_171141_049,implausible soil area; soil mask cut off at ROI edge
+221,IMG_0808.jpg,IMG_0808,soil mask cut off at ROI edge
+221,IMG_0812.jpg,IMG_0812,implausible soil area; soil mask cut off at ROI edge
+221,IMG_0814.jpg,IMG_0814,soil mask cut off at ROI edge
+221,IMG_0818.jpg,IMG_0818,soil mask cut off at ROI edge
+221,IMG_0824.jpg,IMG_0824,soil mask cut off at ROI edge
+221,IMG_0826.jpg,IMG_0826,implausible soil area; soil mask cut off at ROI edge
+221,IMG_0830.jpg,IMG_0830,implausible soil area; soil mask cut off at ROI edge
+221,IMG_0832.jpg,IMG_0832,implausible soil area; soil mask cut off at ROI edge
+221,IMG_0842.jpg,IMG_0842,soil mask cut off at ROI edge
+222,IMG_0419.jpg,IMG_0419,implausible soil area
