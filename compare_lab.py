@@ -2,7 +2,7 @@
 """
 STEP 3 - Compare every pattern in CIELAB (CLS) space.
 
-    python 03_compare_lab.py --out results
+    py compare_lab.py --out results
 
 Reads standardized/<pattern>/<photo>.png + masks/<pattern>/<photo>.png (photos without a mask are listed and skipped).
 Per photo: median L*, a*, b* of the soil pixels. Per pattern: range, overlap with every other pattern,
