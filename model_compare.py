@@ -119,7 +119,7 @@ def main():
         "==========================================================================================",
         " 3-MODEL STACK THESIS REPORT: SVM + XGBoost + Hybrid (CNN x Net-88)",
         "==========================================================================================",
-        f"Total Photos Evaluated: {len(df)} | Total NPK Patterns: {len(pat_classes)} | Validation: 5-Fold Burst-Block GroupKFold",
+        f"Total Photos Evaluated: {len(df)} | Total NPK Patterns: {len(pat_classes)} | Validation: 20-Fold Burst-Block GroupKFold",
         "",
         master[display_cols].to_string(index=False),
         "",
@@ -127,8 +127,8 @@ def main():
         " DETAILED CLASSIFICATION REPORTS FOR 3-MODEL STACK (INDEPENDENT NPK)",
         "==========================================================================================",
     ]
-    for nut, oof_m in [("Nitrogen (N)", st_N), ("Phosphorus (P)", st_P), ("Potassium (K)", st_K)]:
-        y_true = df[nut[0]].values
+    for nut, target_col, oof_m in [("Nitrogen (N)", "N", st_N), ("Phosphorus (P)", "P", st_P), ("Potassium (K)", "K", st_K)]:
+        y_true = df[target_col].values
         y_pred = oof_m.argmax(axis=1)
         report_lines.append(f"\n--- {nut} (0=Low, 1=Medium, 2=High) ---")
         report_lines.append(classification_report(y_true, y_pred, digits=3, zero_division=0))

@@ -299,7 +299,7 @@ def main():
 
     from sklearn.metrics import classification_report, confusion_matrix, f1_score
 
-    y = df["pattern"].values
+    y = df["pattern"].to_numpy(dtype=str)
     if len(df) > len(pats):
         for name, feats in [("L,a,b", CH), ("a,b only (ignores brightness)", ["a", "b"])]:
             pred = svm_cv(df[feats].values, y)
