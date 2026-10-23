@@ -18,7 +18,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from xgboost import XGBClassifier
 
-from soil_stack_common import get_base_dataset
+from soil_stack_common import BLOCK_SIZE, N_FOLDS, USE_META, get_base_dataset
 from T_cnn_n88 import get_cnn_embeddings
 
 
@@ -52,7 +52,15 @@ def main():
     # Structure the payload for the Chatbot API
     production_dict = {
         "classes": npk_classes,
-        "models": {"N": {}, "P": {}, "K": {}}
+        "models": {"N": {}, "P": {}, "K": {}},
+        "info": {
+            "n_photos": int(len(df)),
+            "patterns": sorted(df["pattern"].unique().tolist()),
+            "validation": f"{N_FOLDS}-fold GroupKFold, blocks of {BLOCK_SIZE} consecutive photos",
+            "meta_features_used": bool(USE_META),
+            "n_features_88": int(X88.shape[1]),
+            "not_validated_on": "phones never seen in training, NPK patterns never seen in training",
+        },
     }
     
     for target in ["N", "P", "K"]:
@@ -69,7 +77,7 @@ def main():
         
         # 2. XGBoost (88 Features)
         print("Training XGBoost...")
-        yy, w = get_xgb_weights(y, npk_classes)
+        yy, w = get_xgb_weights(y, np.unique(y))     # labels must be 0..k-1 for the classes actually present
         xgb = XGBClassifier(
             n_estimators=250, max_depth=4, learning_rate=0.05, subsample=0.8,
             colsample_bytree=0.8, min_child_weight=2, reg_alpha=0.0, reg_lambda=2.0,
@@ -96,7 +104,7 @@ def main():
         
         hyb = MLPClassifier(
             hidden_layer_sizes=(160, 80), activation="relu", alpha=0.6, 
-            learning_rate_init=0.002, max_iter=600, early_stopping=True, random_state=42
+            learning_rate_init=0.002, max_iter=300, early_stopping=False, random_state=42
         )
         hyb.fit(X_fused, y)
         
@@ -117,6 +125,8 @@ def main():
             "meta_lr": meta_lr
         }
         
+    print("\nNOTE: scores reported for this stack are for photos from phones/patterns seen in training; "
+          "accuracy on a new phone or a new NPK combination is expected to be much lower.")
     print(f"\nExporting final weights to {out / 'production_stack.joblib'}...")
     joblib.dump(production_dict, out / "production_stack.joblib")
     print("Success! The chatbot API is ready for inference.")

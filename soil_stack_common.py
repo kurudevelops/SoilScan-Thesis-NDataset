@@ -2,8 +2,15 @@
 """
 Shared feature extractor & deterministic CV splitter for multi-PC distributed training.
 Keep this file on every machine alongside `soil_common.py`.
+
+Settings (edit here, or override with environment variables, e.g.  set SOIL_BLOCK_SIZE=40 ):
+  BLOCK_SIZE  photos per held-out block (consecutive photos of one pattern + phone). 20 = strict, 5 = loose.
+  USE_META    False -> the 9 "meta" columns (camera, container/paper, soil-area ratio, constants) are zeroed, so models
+              cannot use the phone or framing as a shortcut. Shapes stay the same, so every script keeps working.
 """
+import os
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -15,6 +22,10 @@ from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score
 from sklearn.model_selection import GroupKFold
 
 from soil_common import load_plain
+
+BLOCK_SIZE = int(os.environ.get("SOIL_BLOCK_SIZE", 20))
+USE_META = os.environ.get("SOIL_USE_META", "1") != "0"
+N_FOLDS = 5
 
 
 def extract_79_soil_features(lab_pixels, L_full, mask):
@@ -76,43 +87,70 @@ def extract_79_soil_features(lab_pixels, L_full, mask):
     return np.nan_to_num(np.array(feats, dtype=np.float32), nan=0.0)
 
 
-def get_base_dataset(standardized="standardized", masks="masks", out_dir="models_out", block_size=5):
-    """Loads or builds the deterministic 88-feature dataset (`features_88.pkl`)."""
+def get_base_dataset(standardized="standardized", masks="masks", out_dir="models_out", block_size=None):
+    """
+    Builds the 88-feature dataset (`features_88.pkl`) INCREMENTALLY: photos already in the cache are reused, photos with a
+    new or changed mask are (re)extracted, photos whose mask was deleted are dropped. So after you lasso more photos you
+    just re-run; you no longer have to delete the cache by hand.
+    """
+    block_size = BLOCK_SIZE if block_size is None else int(block_size)
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     cache = out / "features_88.pkl"
 
-    if cache.exists():
-        df = pd.read_pickle(cache)
+    rep_path = Path(standardized) / "wb_report.csv"
+    cached = pd.read_pickle(cache) if cache.exists() else pd.DataFrame()
+
+    if not rep_path.exists():
+        # Training computer without the photos: work from the cached features exactly as they are.
+        if cached.empty:
+            raise SystemExit(
+                f"Cannot find {rep_path} and there is no feature cache at {cache}.\n"
+                "Either put the standardized/ and masks/ folders next to this script, or copy features_88.pkl "
+                "from the computer/backup that has it into models_out/.")
+        print(f"[features] {rep_path} not found -> using the {len(cached)} cached photos as they are")
+        df = cached.copy()
+        if "mask_mtime" not in df.columns:
+            df["mask_mtime"] = 0.0
     else:
-        rep = pd.read_csv(Path(standardized) / "wb_report.csv", dtype=str).fillna("")
+        rep = pd.read_csv(rep_path, dtype=str).fillna("")
+        wanted = {}
+        for r in rep.itertuples():
+            mp, sp = Path(masks) / r.pattern / f"{r.stem}.png", Path(standardized) / r.pattern / f"{r.stem}.png"
+            if mp.exists() and sp.exists():
+                wanted[f"{r.pattern}/{r.stem}"] = (r, mp, sp, mp.stat().st_mtime)
+
+        if len(cached) and "mask_mtime" not in cached.columns:   # cache from an older version: trust it, record mtimes
+            cached["mask_mtime"] = cached["key"].map(lambda k: wanted[k][3] if k in wanted else np.nan)
+        keep = pd.DataFrame()
+        if len(cached):
+            cur = cached["key"].map(lambda k: wanted[k][3] if k in wanted else -1.0)
+            keep = cached[cached["key"].isin(wanted) & (cached["mask_mtime"] - cur).abs().lt(1e-3)]
+        have = set(keep["key"]) if len(keep) else set()
+        todo = [k for k in wanted if k not in have]
+
         rows = []
-        print(f"Extracting 88 soil features from {standardized}/ and {masks}/ ...")
-        for i, r in enumerate(rep.itertuples(), 1):
-            mp = Path(masks) / r.pattern / f"{r.stem}.png"
-            sp = Path(standardized) / r.pattern / f"{r.stem}.png"
-            if not mp.exists() or not sp.exists():
-                continue
+        if todo:
+            print(f"[features] reusing {len(have)} cached photos, extracting {len(todo)} new/changed ...")
+        for i, k in enumerate(todo, 1):
+            r, mp, sp, mt = wanted[k]
             rgb = load_plain(sp)
             m = np.asarray(Image.open(mp)) > 0
             if m.shape != rgb.shape[:2] or m.sum() < 200:
                 continue
             lab = rgb2lab(rgb)
-            f79 = extract_79_soil_features(lab[m], lab[..., 0], m)
             rows.append({
-                "key": f"{r.pattern}/{r.stem}",
-                "pattern": str(r.pattern),
-                "file": r.file,
-                "stem": r.stem,
-                "camera": r.camera,
-                "mode": getattr(r, "mode", "paper"),
-                "area_ratio": float(m.mean()),
-                "f79": f79,
+                "key": k, "pattern": str(r.pattern), "file": r.file, "stem": r.stem, "camera": r.camera,
+                "mode": getattr(r, "mode", "paper"), "area_ratio": float(m.mean()),
+                "f79": extract_79_soil_features(lab[m], lab[..., 0], m), "mask_mtime": mt,
             })
             if i % 100 == 0:
-                print(f"  processed {i}/{len(rep)} entries...")
-        df = pd.DataFrame(rows)
-        df.to_pickle(cache)
+                print(f"  processed {i}/{len(todo)} ...")
+        df = pd.concat([keep, pd.DataFrame(rows)], ignore_index=True) if (len(keep) or rows) else pd.DataFrame()
+        if rows or len(df) != len(cached):
+            df.to_pickle(cache)
+        if df.empty:
+            raise SystemExit("No photos with masks found. Run the lasso/mask step first.")
 
     # Strictly sort by (pattern, camera, file) so every computer has the exact same row order
     df = df[df["pattern"].str.match(r"^[0-2]{3}$")].sort_values(["pattern", "camera", "file"]).reset_index(drop=True)
@@ -122,6 +160,8 @@ def get_base_dataset(standardized="standardized", masks="masks", out_dir="models
     df["group"] = (
         df["pattern"] + "_" + df["camera"] + "_" + (df.groupby(["pattern", "camera"]).cumcount() // block_size).astype(str)
     )
+    print(f"[split] {len(df)} photos | block_size={block_size} -> {df['group'].nunique()} blocks | "
+          f"{N_FOLDS}-fold GroupKFold | meta features {'ON' if USE_META else 'OFF (zeroed)'}")
 
     cam_lower = df["camera"].str.lower()
     meta = np.column_stack([
@@ -135,13 +175,15 @@ def get_base_dataset(standardized="standardized", masks="masks", out_dir="models
         np.ones(len(df), dtype=np.float32),
         np.zeros(len(df), dtype=np.float32),
     ])
+    if not USE_META:
+        meta = np.zeros_like(meta)
     X88 = np.hstack([np.vstack(df["f79"].values), meta])
     X_color_meta = np.hstack([X88[:, :39], meta])
     return df, X_color_meta, X88
 
 
-def get_oof_probabilities(fit_predict_proba_fn, X, y, groups, classes, n_splits=5):
-    """Generates leakage-safe Out-Of-Fold (OOF) probability matrices across 5 burst-block folds."""
+def get_oof_probabilities(fit_predict_proba_fn, X, y, groups, classes, n_splits=N_FOLDS):
+    """Out-of-fold probability matrices; whole blocks of photos are held out in each fold."""
     classes = np.asarray(classes)
     oof = np.zeros((len(y), len(classes)), dtype=np.float32)
     gkf = GroupKFold(n_splits=min(n_splits, len(np.unique(groups))))

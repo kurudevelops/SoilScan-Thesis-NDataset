@@ -20,10 +20,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import GroupKFold
 
-from soil_stack_common import get_base_dataset, summarize_model_oof
+from soil_stack_common import BLOCK_SIZE, N_FOLDS, USE_META, get_base_dataset, summarize_model_oof
 
 
-def stack_oof_probs(prob_list, y, groups, classes, n_splits=5):
+def stack_oof_probs(prob_list, y, groups, classes, n_splits=N_FOLDS):
     """Fits a regularized LogisticRegression meta-learner on the concatenated OOF probabilities."""
     X_meta = np.hstack(prob_list)
     classes = np.asarray(classes)
@@ -107,9 +107,9 @@ def main():
         "camera": df["camera"],
         "mode": df["mode"],
         "true_N": df["N"], "true_P": df["P"], "true_K": df["K"],
-        "SVM_N": sv_N.argmax(1), "XGB_N": xgb["oof_N"].argmax(1), "HYB_N": hyb["oof_N"].argmax(1), "STACK_N": st_N.argmax(1),
-        "SVM_P": sv_P.argmax(1), "XGB_P": xgb["oof_P"].argmax(1), "HYB_P": hyb["oof_P"].argmax(1), "STACK_P": st_P.argmax(1),
-        "SVM_K": sv_K.argmax(1), "XGB_K": xgb["oof_K"].argmax(1), "HYB_K": hyb["oof_K"].argmax(1), "STACK_K": st_K.argmax(1),
+        "SVM_N": svm["oof_N"].argmax(1), "SOFT_N": sv_N.argmax(1), "XGB_N": xgb["oof_N"].argmax(1), "HYB_N": hyb["oof_N"].argmax(1), "STACK_N": st_N.argmax(1),
+        "SVM_P": svm["oof_P"].argmax(1), "SOFT_P": sv_P.argmax(1), "XGB_P": xgb["oof_P"].argmax(1), "HYB_P": hyb["oof_P"].argmax(1), "STACK_P": st_P.argmax(1),
+        "SVM_K": svm["oof_K"].argmax(1), "SOFT_K": sv_K.argmax(1), "XGB_K": xgb["oof_K"].argmax(1), "HYB_K": hyb["oof_K"].argmax(1), "STACK_K": st_K.argmax(1),
     })
     pred_df.to_csv(out / "final_stack_predictions.csv", index=False)
 
@@ -119,7 +119,7 @@ def main():
         "==========================================================================================",
         " 3-MODEL STACK THESIS REPORT: SVM + XGBoost + Hybrid (CNN x Net-88)",
         "==========================================================================================",
-        f"Total Photos Evaluated: {len(df)} | Total NPK Patterns: {len(pat_classes)} | Validation: 20-Fold Burst-Block GroupKFold",
+        f"Total Photos Evaluated: {len(df)} | Total NPK Patterns: {len(pat_classes)} | Validation: {N_FOLDS}-fold GroupKFold, whole blocks of {BLOCK_SIZE} consecutive photos held out | meta features {'ON' if USE_META else 'OFF'}",
         "",
         master[display_cols].to_string(index=False),
         "",
@@ -135,6 +135,14 @@ def main():
         cm = confusion_matrix(y_true, y_pred, labels=[0, 1, 2])
         report_lines.append("Confusion Matrix (rows=Actual 0/1/2, cols=Predicted 0/1/2):\n" + str(cm))
 
+    report_lines += [
+        "",
+        "NOTES FOR THE THESIS",
+        f"- All scores are out-of-fold on held-out blocks of {BLOCK_SIZE} photos from phones and patterns that appear in training.",
+        "- They do NOT measure performance on a phone the models never saw, or on an NPK pattern never seen (see T_strict_eval.py).",
+        "- The stack is fit on the same out-of-fold probabilities it is scored on (through its own grouped CV), so differences of",
+        "  1-3 points between the stack, the soft vote and the best single model are within noise.",
+    ]
     (out / "stack_summary_report.txt").write_text("\n".join(report_lines), encoding="utf-8")
     print("\n".join(report_lines[:35]))
     print(f"\nSaved Master CSV -> {out / 'master_comparison.csv'}")

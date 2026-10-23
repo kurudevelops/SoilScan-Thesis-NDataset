@@ -13,6 +13,7 @@ It answers four questions with one table:
                 pattern  = hold out WHOLE patterns (N/P/K only) -> does colour generalise to NEW nutrient combinations?
   4. baseline : the score of always guessing the most common level
 
+  (use --block-size 20 for a stricter "blocks" test that holds out whole sessions)
   5. phone test (always run at the end, on folders that contain 2+ phones): train on some phones, test on a phone the model
      never saw, for the SAME patterns. This is the test that matters for folders mixed with several phones.
 
@@ -57,7 +58,7 @@ def phone_test(df_all, X88_all, a, feature_sets):
     for model, (fs_name, cols) in itertools.product(a.models, feature_sets.items()):
         X = X88[:, cols]
         row = {"model": model, "features": fs_name, "n_photos": len(df), "patterns": " ".join(pat_classes), "phones": " | ".join(phones)}
-        for cv, groups, ns in (("blocks", df["group"].values, 5), ("phone", df["camera"].values, len(phones))):
+        for cv, groups, ns in (("blocks", df["group"].values, a.folds), ("phone", df["camera"].values, len(phones))):
             for nut in "NPK":
                 y = df[nut].values
                 oof = get_oof_probabilities(FITTERS[model], X, y, groups, np.array([0, 1, 2]), n_splits=ns)
@@ -83,9 +84,12 @@ def main():
     ap.add_argument("--phone-map", default=None, help="csv with columns pattern,phone for photos that have no metadata")
     ap.add_argument("--min-per-phone", type=int, default=5, help="phone test: minimum photos of a pattern from a phone")
     ap.add_argument("--skip-phone-test", action="store_true")
+    ap.add_argument("--folds", type=int, default=5, help="number of cross-validation folds for the 'blocks' test (model_compare.py uses 20)")
+    ap.add_argument("--block-size", type=int, default=None,
+                    help="photos per held-out block (default: BLOCK_SIZE in soil_stack_common.py = 20). Bigger blocks hold out whole sessions")
     a = ap.parse_args()
 
-    df_all, _, X88_all = get_base_dataset()
+    df_all, _, X88_all = get_base_dataset(block_size=a.block_size)
     if a.phone_map:
         pm = pd.read_csv(a.phone_map, dtype=str).set_index("pattern")["phone"].to_dict()
         miss = df_all["camera"].str.lower().str.startswith("no-exif")
@@ -113,7 +117,7 @@ def main():
         for model, (fs_name, cols), cv in itertools.product(a.models, feature_sets.items(), ["blocks", "pattern"]):
             X = X88[:, cols]
             groups = block_groups if cv == "blocks" else pat_groups
-            n_splits = 5 if cv == "blocks" else 10_000          # 10_000 -> one fold per pattern (leave-one-pattern-out)
+            n_splits = a.folds if cv == "blocks" else 10_000          # 10_000 -> one fold per pattern (leave-one-pattern-out)
             row = {"camera": cam, "model": model, "features": fs_name, "cv": cv, "n_photos": len(df)}
             for nut in "NPK":
                 y = df[nut].values

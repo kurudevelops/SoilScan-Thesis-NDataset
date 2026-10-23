@@ -7,6 +7,7 @@ the Hybrid Out-Of-Fold probabilities to `models_out/oof_hybrid.npz` for the 3-mo
 Run: py step4c_train_hybrid_cnn_net88.py
 """
 import argparse
+import warnings
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -14,6 +15,9 @@ from PIL import Image
 from sklearn.decomposition import PCA
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
+
+warnings.filterwarnings("ignore", message=".*Stochastic Optimizer.*")      # MLP "max_iter reached" notices
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
 
 from soil_common import load_plain
 from soil_stack_common import get_base_dataset, get_oof_probabilities, summarize_model_oof
@@ -31,13 +35,7 @@ def soil_crop(rgb, mask, out=224):
     return np.asarray(Image.fromarray((sq * 255).astype(np.uint8)).resize((out, out), Image.BILINEAR)) / 255.0
 
 
-def get_cnn_embeddings(df, standardized="standardized", masks="masks", out_dir="models_out", backbone="resnet50"):
-    cache = Path(out_dir) / f"cnn_embeddings_{backbone}.npy"
-    if cache.exists():
-        emb = np.load(cache)
-        if len(emb) == len(df):
-            return emb
-
+def _extract_embeddings(df, standardized, masks, backbone):
     import torch
     import torchvision.models as tvm
 
@@ -62,10 +60,34 @@ def get_cnn_embeddings(df, standardized="standardized", masks="masks", out_dir="
             batch = ((np.stack(crops[i : i + 32]) - mu) / sd).transpose(0, 3, 1, 2)
             x = torch.tensor(batch, dtype=torch.float32, device=device)
             out.append(net(x).cpu().numpy())
+    return np.vstack(out).astype(np.float32)
 
-    emb = np.vstack(out).astype(np.float32)
-    np.save(cache, emb)
-    return emb
+
+def get_cnn_embeddings(df, standardized="standardized", masks="masks", out_dir="models_out", backbone="resnet50"):
+    """Embeddings aligned to df's rows. Cached per photo AND mask version, so a changed photo set or a re-lassoed mask
+    is re-extracted, and unchanged photos are never recomputed."""
+    cache = Path(out_dir) / f"cnn_embeddings_{backbone}.npz"
+    ids = [f"{k}@{mt:.3f}" for k, mt in zip(df["key"], df["mask_mtime"])]
+    have = {}
+    if cache.exists():
+        z = np.load(cache, allow_pickle=True)
+        have = dict(zip(z["ids"].tolist(), z["emb"]))
+    need = [i for i, k in enumerate(ids) if k not in have]
+    if need and not (Path(standardized) / "wb_report.csv").exists():
+        # No photos on this computer: fall back to the old position-based cache if it matches this dataset exactly.
+        legacy = Path(out_dir) / f"cnn_embeddings_{backbone}.npy"
+        if legacy.exists() and len(np.load(legacy)) == len(df):
+            print(f"[CNN] no photos here -> using the old cache {legacy.name} (matched by row count only)")
+            return np.load(legacy).astype(np.float32)
+        raise SystemExit("No photos here to extract CNN embeddings from, and no matching embeddings cache.\n"
+                         f"Copy cnn_embeddings_{backbone}.npz (or the old .npy) into models_out/, or run on the computer with standardized/ and masks/.")
+    if need:
+        new = _extract_embeddings(df.iloc[need], standardized, masks, backbone)
+        for i, e in zip(need, new):
+            have[ids[i]] = e
+        Path(out_dir).mkdir(parents=True, exist_ok=True)
+        np.savez_compressed(cache, ids=np.array(list(have.keys())), emb=np.vstack(list(have.values())))
+    return np.vstack([have[k] for k in ids]).astype(np.float32)
 
 
 def fit_predict_net88(X_tr, y_tr, X_te, present):
@@ -77,8 +99,8 @@ def fit_predict_net88(X_tr, y_tr, X_te, present):
         activation="relu",
         alpha=0.5,
         learning_rate_init=0.002,
-        max_iter=600,
-        early_stopping=True,
+        max_iter=300,
+        early_stopping=False,
         random_state=42,
     )
     clf.fit(X_tr_s, y_tr)
@@ -93,13 +115,13 @@ def fit_predict_cnn_only(X_tr, y_tr, X_te, present):
     pca = PCA(n_components=n_comp, random_state=42)
     X_tr_p = pca.fit_transform(X_tr_s)
     X_te_p = pca.transform(X_te_s)
-    clf = MLPClassifier(hidden_layer_sizes=(64,), alpha=1.0, max_iter=500, early_stopping=True, random_state=42)
+    clf = MLPClassifier(hidden_layer_sizes=(64,), alpha=1.0, max_iter=300, early_stopping=False, random_state=42)
     clf.fit(X_tr_p, y_tr)
     return clf.predict_proba(X_te_p)
 
 
 def make_hybrid_fitter(n_88_cols):
-    """Fuses all 88 Net-88 features + top 48 fold-PCA components of the 2D CNN inside each CV fold (zero leakage)."""
+    """Fuses all 88 Net-88 features + top 48 fold-PCA components of the 2D CNN inside each CV fold (scalers and PCA are fit on the training photos of each fold only)."""
     def fit_predict_hybrid(X_tr, y_tr, X_te, present):
         X88_tr, Xcnn_tr = X_tr[:, :n_88_cols], X_tr[:, n_88_cols:]
         X88_te, Xcnn_te = X_te[:, :n_88_cols], X_te[:, n_88_cols:]
@@ -125,8 +147,8 @@ def make_hybrid_fitter(n_88_cols):
             activation="relu",
             alpha=0.6,
             learning_rate_init=0.002,
-            max_iter=600,
-            early_stopping=True,
+            max_iter=300,
+            early_stopping=False,
             random_state=42,
         )
         clf.fit(X_tr_fused, y_tr)
