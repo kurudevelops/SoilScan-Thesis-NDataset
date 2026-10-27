@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Single-image inference engine for SoilScan FastAPI backend.
+Matched to the exact filenames inside Backend/.
 """
 import base64
 import io
@@ -24,8 +25,8 @@ from soil_common import (
     set_scale,
     srgb_to_lin,
 )
-from soil_stack_common_2 import USE_META, extract_79_soil_features
-from T_cnn_n88_2 import soil_crop
+from soil_stack_common import USE_META, extract_79_soil_features
+from T_cnn_n88 import soil_crop
 
 LEVEL_MAP = {0: "L", 1: "M", 2: "H"}
 LEVEL_NAME = {0: "Low", 1: "Medium", 2: "High"}
@@ -53,7 +54,7 @@ class SoilScanPredictor:
         set_scale(self.max_side)
         rgb, cam = load_srgb(image_path, self.max_side)
 
-        # 1. White Balance
+        # 1. White Balance Standardization
         white = find_white(rgb)
         mode = detect_mode(rgb, white)
         is_container = mode == "container"
@@ -81,7 +82,7 @@ class SoilScanPredictor:
             if mask.sum() < 200:
                 return {
                     "status": "error",
-                    "message": "Could not isolate soil. Ensure soil is placed clearly on white paper/container.",
+                    "message": "Could not isolate soil. Ensure soil is placed on white paper/container.",
                     "qc_flags": flags,
                 }
 

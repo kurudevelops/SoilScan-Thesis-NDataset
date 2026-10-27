@@ -21,7 +21,7 @@ from skimage.feature import graycomatrix, graycoprops, local_binary_pattern
 from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score
 from sklearn.model_selection import GroupKFold
 
-from Backend.soil_common import load_plain
+from soil_common import load_plain
 
 BLOCK_SIZE = int(os.environ.get("SOIL_BLOCK_SIZE", 20))
 USE_META = os.environ.get("SOIL_USE_META", "1") != "0"

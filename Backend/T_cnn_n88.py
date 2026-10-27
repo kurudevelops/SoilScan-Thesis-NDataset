@@ -19,8 +19,8 @@ from sklearn.preprocessing import StandardScaler
 warnings.filterwarnings("ignore", message=".*Stochastic Optimizer.*")      # MLP "max_iter reached" notices
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
 
-from Backend.soil_common import load_plain
-from Backend.soil_stack_common import get_base_dataset, get_oof_probabilities, summarize_model_oof
+from soil_common import load_plain
+from soil_stack_common import get_base_dataset, get_oof_probabilities, summarize_model_oof
 
 
 def soil_crop(rgb, mask, out=224):

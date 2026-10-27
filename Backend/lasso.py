@@ -22,7 +22,7 @@ import pandas as pd
 from PIL import Image
 from skimage.segmentation import find_boundaries
 
-from Backend.soil_common import (
+from soil_common import (
     load_ann,
     load_plain,
     make_sheet,
