@@ -20,7 +20,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import GroupKFold
 
-from soil_stack_common import BLOCK_SIZE, N_FOLDS, USE_META, get_base_dataset, summarize_model_oof
+from Backend.soil_stack_common import BLOCK_SIZE, N_FOLDS, USE_META, get_base_dataset, summarize_model_oof
 
 
 def stack_oof_probs(prob_list, y, groups, classes, n_splits=N_FOLDS):

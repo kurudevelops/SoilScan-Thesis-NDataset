@@ -30,9 +30,9 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score
 
-from soil_stack_common import get_base_dataset, get_oof_probabilities
-from T_SVM import fit_predict_svm
-from T_XGBoost import fit_predict_xgb
+from Backend.soil_stack_common import get_base_dataset, get_oof_probabilities
+from Backend.T_SVM import fit_predict_svm
+from Backend.T_XGBoost import fit_predict_xgb
 
 FITTERS = {"svm": fit_predict_svm, "xgb": fit_predict_xgb}
 

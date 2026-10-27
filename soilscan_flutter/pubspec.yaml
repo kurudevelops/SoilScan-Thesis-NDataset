@@ -1,0 +1,22 @@
+name: soilscan_flutter
+description: SoilScan Offline-First NPK Scanner
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.10.5+9
+  image_picker: ^1.0.7
+  sqflite: ^2.3.2
+  path_provider: ^2.1.2
+  path: ^1.9.0
+  http: ^1.2.1
+  connectivity_plus: ^5.0.2
+  supabase_flutter: ^2.3.4
+
+flutter:
+  uses-material-design: true

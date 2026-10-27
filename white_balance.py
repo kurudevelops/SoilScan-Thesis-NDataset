@@ -17,7 +17,7 @@ from PIL import Image
 from skimage.color import rgb2lab
 from skimage.segmentation import find_boundaries
 
-from soil_common import (
+from Backend.soil_common import (
     TARGET_WHITE,
     clean_reference,
     detect_mode,

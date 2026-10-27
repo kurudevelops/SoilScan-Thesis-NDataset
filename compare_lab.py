@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""
-STEP 3 - Compare every pattern in CIELAB (CLS) space.
 
-    py compare_lab.py --out results
-
-Reads standardized/<pattern>/<photo>.png + masks/<pattern>/<photo>.png (photos without a mask are listed and skipped).
-Per photo: median L*, a*, b* of the soil pixels. Per pattern: range, overlap with every other pattern,
-deltaE2000 and Mahalanobis distance between centres, leave-one-out SVM separability, and within-pattern
-paper vs. container comparisons for mixed folders.
-Pattern folders named like 010 (N,P,K = 0 low / 1 medium / 2 high) also get a per-nutrient analysis.
-"""
 import argparse
 from itertools import combinations
 from pathlib import Path
@@ -24,7 +14,7 @@ from PIL import Image
 from scipy.stats import spearmanr
 from skimage.color import deltaE_ciede2000, rgb2lab
 
-from soil_common import CH, load_plain, npk
+from Backend.soil_common import CH, load_plain, npk
 
 
 # ---------------------------------------------------------------- features

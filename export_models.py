@@ -18,8 +18,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 from xgboost import XGBClassifier
 
-from soil_stack_common import BLOCK_SIZE, N_FOLDS, USE_META, get_base_dataset
-from T_cnn_n88 import get_cnn_embeddings
+from Backend.soil_stack_common import BLOCK_SIZE, N_FOLDS, USE_META, get_base_dataset
+from Backend.T_cnn_n88 import get_cnn_embeddings
 
 
 def get_xgb_weights(y, classes):
